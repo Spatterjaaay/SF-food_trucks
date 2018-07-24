@@ -18,10 +18,12 @@ class FoodTruck
     day = time.wday
 
     # request food trucks that are open now and sorted alphabetically
-    # application requirements state that the program should return
+    # note: application requirements state that the program should return
     # "food trucks that are open at the current date, when the program is being run"
     # but give example with a specific time, which is ambiguous;
     # so I interpet this as meaning current date and time
+    # note: the API allows us to specify a url parameter that returns already sorted foodstrucks
+    # by their name. Because we are making changes to the names, this is no longer useful
     url = BASE_URL + "$where=dayorder=#{day} AND start24 <= '#{hour}' AND end24 > '#{hour}'&$order=applicant"
 
     @response = HTTParty.get(url, follow_redirects: true)
@@ -34,7 +36,7 @@ class FoodTruck
     # modify the name to be more readable
     trim_name(@response)
 
-    # sorts truck names alphabetically
+    # sorts truck names alphabetically, because we made changes to the name
     @response.sort_by! { |truck| truck['applicant'] }
 
     # set initial position to use in next_page

@@ -49,5 +49,3 @@ while page
   print_page(page)
   page = foodtruck.next_page
 end
-
-puts "THE END"
