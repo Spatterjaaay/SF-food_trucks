@@ -14,7 +14,7 @@ gem install httparty
 ## To run this program:
 
 1. clone this repository
-2. navigate to the folder where the show-open-food-trucks.rb is saved and run it
+2. navigate to the folder where the show-open-food-trucks.rb is saved and run ``` ruby show-open-food-trucks.rb ```
 3. if there are more than 10 food trucks, you will be prompted to show more pages, press enter to see more trucks, or hit "n" to exit
 
 ```
