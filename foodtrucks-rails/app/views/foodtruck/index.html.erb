@@ -1,2 +1,13 @@
-<h1>Foodtruck#index</h1>
-<p>Find me in app/views/foodtruck/index.html.erb</p>
+<h1>Foodtrucks</h1>
+<section>
+  <table>
+    <tbody>
+      <% @foodtrucks.next_page.each do |foodtruck| %>
+      <tr>
+        <td><%= foodtruck["applicant"] %></td>
+        <td><%= foodtruck["location"] %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
